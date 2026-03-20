@@ -31,14 +31,14 @@ public class ControllerSample {
 
   @GetMapping("/fixed-thread-pool")
   public void fixedThreadPool() {
-    ExecutorService executor = Executors.newFixedThreadPool(4);
+    ExecutorService executor = Executors.newFixedThreadPool(2);
     executor.submit(sampleTask());
     executor.shutdown();
   }
 
   @GetMapping("/scheduled-thread-pool")
   public void scheduledThreadPool() {
-    var executor = Executors.newScheduledThreadPool(4);
+    var executor = Executors.newScheduledThreadPool(2);
     executor.submit(sampleTask());
     executor.shutdown();
   }
@@ -46,7 +46,7 @@ public class ControllerSample {
   @GetMapping("/thread-pool-executor")
   public void threadPoolExecutor() {
     ExecutorService executor = new ThreadPoolExecutor(
-        4, 6, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue<>(200));
+        1, 2, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue<>(5));
     executor.submit(sampleTask());
     executor.shutdown();
   }
