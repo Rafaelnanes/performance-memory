@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ide__getDiagnostics",
+      "WebFetch(domain:gatling.io)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.gatling.io)",
+      "WebSearch",
+      "WebFetch(domain:plugins.gradle.org)",
+      "WebFetch(domain:mvnrepository.com)"
+    ]
+  }
+}
